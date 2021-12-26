@@ -1,0 +1,38 @@
+<p>reactive works!</p>
+<p>templateform works!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="Form-group">
+            <form (ngSubmit)="toSubmit()" [formGroup]= "myForm" > 
+      
+                 <div class="row">
+                <div class="col-sm-12">
+            <label>Name</label>
+            <input type="text" id="name" class="form-control" name="name" formControlName="name"  >
+            
+        </div>
+        <div class="col-sm-12">
+            <label>SurName</label>
+            <input type="text" id="surname" class="form-control" name="surname" formControlName="surname" >
+        </div>
+    </div> 
+        <div class="col-sm-12">
+            <label>Email</label>
+            <input type="text" id="email" class="form-control" name="email" formControlName="email"   >
+            <span *ngIf="myForm.controls.email.invalid && myForm.controls.email.touched">Email should be vikash@gmail.com</span>
+        </div>
+        <div formGroupName="education">
+            <input formControlName="dgree" placeholder="B.tech"><br/><br/>
+            <input formControlName="stream" placeholder="computer science">
+          </div>
+          
+        <div class="col-sm-12">
+            
+            <button type="submit" class="btn btn-primary" >Submit</button>
+            
+        </div>
+    </form>   
+    </div>
+    </div>
+</div>

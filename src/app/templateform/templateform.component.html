@@ -1,0 +1,33 @@
+<p>templateform works!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="Form group">
+            <form (ngSubmit)="toSubmit(f)" #f="ngForm"> 
+      
+                 <div class="form">
+                <div class="col-sm-12">
+            <label>Name *</label>
+            <input type="text" id="name" class="form-control" name="name"  required ngModel>
+            <!-- <span *ngIf="f.controls.name.invalid && f.controls.name.touched">It is required filed</span> -->
+            <span *ngIf="f.controls.name.invalid && f.controls.name.touched">it is required filed</span>
+        </div>
+        <div class="col-sm-12">
+            <label>SurName *</label>
+            <input type="text" id="surname" class="form-control" name="surname" required ngModel>
+            <span *ngIf="f.controls.surname.invalid && f.controls.surname.touched">it's required</span>
+        </div>
+    </div> 
+        <div class="col-sm-12">
+            <label>Email *</label>
+            <input type="text" id="email" class="form-control" name="email" checkEmail required ngModel >
+            <span *ngIf="f.controls.email.invalid && f.controls.email.touched">Email should be vikash@gmail.com</span>
+        </div>
+        <div class="col-sm-12">
+            
+            <button type="submit" class="btn btn-primary" >Submit</button>
+        </div>
+    </form>   
+    </div>
+    </div>
+</div>
